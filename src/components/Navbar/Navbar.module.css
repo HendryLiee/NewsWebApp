@@ -1,0 +1,122 @@
+.navbar {
+    background: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .linksContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .linksContainer .link {
+    font-weight: 600;
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .linksContainer .link:hover {
+    color: #ff6f61;
+    transform: scale(1.05);
+  }
+  
+  .linksContainer .activeLink {
+    font-weight: 700;
+    color: #ff6f61;
+    text-decoration: none;
+    border-bottom: 3px solid #ff6f61;
+    padding-bottom: 5px;
+  }
+  
+  .searchBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-grow: 1;
+  }
+  
+  .searchBar {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid #ddd;
+    width: 100%;
+    max-width: 200px;
+    transition: border-color 0.3s ease;
+    background-color: white;
+    color: black;
+  }
+  
+  .searchBar:focus {
+    outline: none;
+    border-color: #ff6f61;
+  }
+  
+  .searchBarBtn {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 15px;
+    margin-right: 80px;
+    height: 40px;
+  }
+  
+  .searchBarBtn:hover {
+    background-color: #e65c50;
+    transform: scale(1.05);
+  }
+  
+  .searchBarBtn:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 20px;
+    }
+  
+    .linksContainer {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .linksContainer .link {
+      padding: 8px 0;
+    }
+  
+    .searchBarContainer {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+  
+    .searchBarBtn {
+      font-size: 14px;
+      padding: 8px 15px;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
