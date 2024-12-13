@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NEWS_REDUCER_CASES } from "../../store/reducers";
 import { NewsCard } from "../NewsCard";
 import Loading from "../Loading";
-import style from "../../pages/CommonPageLayout.module.css"
+import style from "../../pages/CommonPageLayout.module.css";
 
 function NewsList({ news }) {
   const dispatch = useDispatch();
@@ -20,9 +20,12 @@ function NewsList({ news }) {
     <section className={style.newsContainer}>
       {news.length > 0 ? (
         news.map((n) => {
-          const { headline, abstract, source, byline, web_url } = n;
+          const { headline, abstract, source, byline, web_url, multimedia } = n;
           const saved = isNewsSaved(n);
 
+          const imageUrl = multimedia && multimedia[0] 
+            ? `https://static01.nyt.com/${multimedia[0].url}` 
+            : process.env.PUBLIC_URL + '/assets/news.png';
           return (
             <NewsCard
               key={n._id}
@@ -43,6 +46,7 @@ function NewsList({ news }) {
               onViewNewDetail={() => {
                 window.open(web_url, "_blank");
               }}
+              imageUrl={imageUrl}
             />
           );
         })

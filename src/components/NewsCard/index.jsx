@@ -1,27 +1,30 @@
 import styles from './NewsCard.module.css';
 
 const truncateChar = (text) => {
-    let result = ''
+    let result = '';
     for (let i = 0; i < text.length; i++) {
-        if(i < 200) {
+        if(i < 250) {
             result += text[i];
-        }else {
-            break
+        } else {
+            break;
         }
     }
 
-    return `${result}..`
+    return `${result}...`;
 }
 
 function NewsCard(props) {
-    const { headline, abstract, source, author, buttonText, isSaved, onSave, onViewNewDetail } = props;
+    const { headline, abstract, source, author, buttonText, isSaved, onSave, onViewNewDetail, imageUrl } = props;
 
     return (
         <section className={styles.newsCard}>
+            <img src={imageUrl} alt={headline} className={styles.newsImage} />
+
             <h3>{source}</h3>
             <h1>{headline}</h1>
             <h4>{author}</h4>
             <p>{truncateChar(abstract)}</p>
+
             <div className={styles.buttonContainer}>
                 <button className={styles.newsPageButton} onClick={() => onViewNewDetail()}>News Page</button>
                 <button 
@@ -34,4 +37,4 @@ function NewsCard(props) {
     );
 }
 
-export { NewsCard }
+export { NewsCard };

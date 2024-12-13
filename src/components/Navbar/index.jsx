@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [searchQuery, setSearchQuery] = React.useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSearch = () => {
@@ -14,9 +15,20 @@ function Navbar() {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <section className={styles.navbar}>
-      <section className={styles.linksContainer}>
+      <section className={styles.webTitle}>NEWS WEB APP</section>
+      <section className={`${styles.linksContainer} ${isMenuOpen ? styles.menuOpen : ''}`}>
         {[
           { title: "INDONESIA", path: "/" },
           { title: "PROGRAMMING", path: "/programming" },
@@ -34,11 +46,12 @@ function Navbar() {
           </NavLink>
         ))}
       </section>
-      <div>
+      <div className={styles.searchBarContainer}>
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder="Search news..."
           className={styles.searchBar}
         />
@@ -46,9 +59,11 @@ function Navbar() {
           Search
         </button>
       </div>
+      <button className={styles.hamburger} onClick={toggleMenu}>
+        &#9776;
+      </button>
     </section>
   );
 }
 
 export { Navbar };
-
