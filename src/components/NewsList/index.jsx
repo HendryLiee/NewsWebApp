@@ -25,7 +25,7 @@ function NewsList({ news }) {
 
           const imageUrl = multimedia && multimedia[0] 
             ? `https://static01.nyt.com/${multimedia[0].url}` 
-            : process.env.PUBLIC_URL + '/assets/news.png';
+            : process.env.PUBLIC_URL + '/assets/news.jpg';
           return (
             <NewsCard
               key={n._id}

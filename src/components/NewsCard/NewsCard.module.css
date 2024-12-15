@@ -58,6 +58,7 @@
   justify-content: space-around;
   gap: 10px;
   margin-top: auto;
+  flex-direction: column;
 }
 
 .newsPageButton,
@@ -75,6 +76,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .newsPageButton {

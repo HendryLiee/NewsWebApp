@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 20px;
   background: #121212;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 15px 15px;
@@ -23,7 +23,8 @@
 
 .linksContainer {
   display: flex;
-  gap: 100px;
+  flex-wrap: wrap;
+  gap: 30px;
   transition: transform 0.3s ease;
 }
 
@@ -43,7 +44,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 0%;
+  width: 0;
   height: 2px;
   background: #fff;
   transition: width 0.3s ease, left 0.3s ease;
@@ -125,7 +126,7 @@
   }
 
   .linksContainer {
-    gap: 80px;
+    gap: 20px;
   }
 
   .searchBar {
@@ -139,37 +140,37 @@
   }
 
   .linksContainer {
-    gap: 60px;
+    gap: 15px;
   }
 
   .searchBar {
     width: 160px;
   }
 
-  .searchBarBtn {
-    padding: 8px 15px;
-  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .navbar {
     padding: 10px 15px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .webTitle {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    order: 0;
   }
 
   .linksContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
     display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .menuOpen {
+    display: flex;
   }
 
   .link {
@@ -178,30 +179,28 @@
     text-align: left;
   }
 
+  .hamburger {
+    display: block;
+    order: -1;
+  }
+
   .searchBarContainer {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 2;
   }
 
   .searchBar {
-    width: 100%;
+    width: 150px;
   }
 
   .searchBarBtn {
-    width: 100%;
-  }
-
-  .menuOpen {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
+    padding: 8px 15px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .navbar {
     padding: 10px 10px;
   }
@@ -216,19 +215,10 @@
   }
 
   .searchBar {
-    width: 150px;
+    width: 100px;
   }
 
   .searchBarBtn {
     padding: 8px 15px;
-  }
-
-  .webTitle {
-    font-size: 18px;
-  }
-
-  .searchBarContainer {
-    flex-direction: column;
-    gap: 10px;
   }
 }
