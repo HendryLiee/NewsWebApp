@@ -205,6 +205,11 @@
     padding: 10px 10px;
   }
 
+  .webTitle {
+    font-size: 16px;
+    order: 0;
+  }
+
   .linksContainer {
     gap: 5px;
   }
@@ -215,10 +220,10 @@
   }
 
   .searchBar {
-    width: 100px;
+    width: 85px;
   }
 
   .searchBarBtn {
-    padding: 8px 15px;
+    padding: 8px 12px;
   }
 }
